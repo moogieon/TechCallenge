@@ -1,3 +1,5 @@
+import Searchbar from "../../commons/search/searchBar.contanier";
+import Searchbar02 from "../../commons/search02/searchBar.contanier";
 import {
   ItemLog,
   Wrapper,
@@ -28,19 +30,26 @@ export default function MarketListUI(props) {
       <>
         <Wrapper>
           <Title>marketList</Title>
+          <Searchbar setKeyword={props.setKeyword} />
+          <Searchbar02 setKeyword={props.setKeyword} />
           <Head>카테고리</Head>
 
           <Body>
-            {props.list?.map((data: IProps) => (
-              <Wrapper_Body key={data.id}>
-                <InfoBox>
-                  <GoodsImg></GoodsImg>
-                  <GoodsInfo>
-                    <GoodsName>{data.name}</GoodsName>
-                  </GoodsInfo>
-                </InfoBox>
-              </Wrapper_Body>
-            ))}
+            {props.list
+              ?.filter((data) => data.name.includes(props.keyword))
+              .map((data: IProps) => (
+                <Wrapper_Body
+                  key={data.id}
+                  onClick={props.onClickcategory(data.id)}
+                >
+                  <InfoBox>
+                    <GoodsImg></GoodsImg>
+                    <GoodsInfo>
+                      <GoodsName>{data.name}</GoodsName>
+                    </GoodsInfo>
+                  </InfoBox>
+                </Wrapper_Body>
+              ))}
           </Body>
         </Wrapper>
         {/* <ItemLog>

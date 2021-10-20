@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  width: 100% ;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,6 +23,7 @@ export const Head = styled.div`
 export const Body = styled.div`
 
   display: flex;
+  
 
 
 

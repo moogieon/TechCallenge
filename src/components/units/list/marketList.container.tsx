@@ -2,8 +2,11 @@ import MarketListUI from "./marketList.presenter";
 import axios from "axios";
 import { useEffect, useState } from "react";
 export default function MarketList() {
+  // !! 검색
+  const [keyword, setKeyword] = useState("");
+  // !! list
   const [list, setList] = useState([] as any);
-  const [data2, setData2] = useState("");
+
   useEffect(() => {
     const getData = async () => {
       const resultList = await axios.get(
@@ -12,8 +15,22 @@ export default function MarketList() {
       setList(resultList.data);
       console.log(resultList.data);
     };
-
     getData();
   }, []);
-  return <MarketListUI list={list} />;
+
+  const onClickcategory = (categoryId) => async () => {
+    await axios.get(
+      `https://mock-api.ssomee.com/products/${categoryId}/${1}?order=date-desc`,
+    );
+    console.log(categoryId);
+  };
+
+  return (
+    <MarketListUI
+      list={list}
+      setKeyword={setKeyword}
+      keyword={keyword}
+      onClickcategory={onClickcategory}
+    />
+  );
 }
