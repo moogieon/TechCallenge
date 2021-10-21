@@ -5,8 +5,8 @@ export const Searchbar = styled.div`
   width: 300px;
   height: 52px;
   border-radius: 15px;
-  background: #d3e5c3;
-  border: 1px solid #d3e5c3;
+  background: mintcream;
+  border: 1px solid mintcream;
   padding: 0px 20px;
   display: flex;
   flex-direction: row;
@@ -28,6 +28,6 @@ export const SearchbarInput = styled.input`
   height: 100%;
   border: none;
   outline: none;
-  background-color: #d3e5c3;
+  background-color: mintcream;
   margin: 0px 20px;
 `;

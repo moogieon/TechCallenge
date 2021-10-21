@@ -1,23 +1,19 @@
-import Searchbar from "../../commons/search/searchBar.contanier";
+import List from "../../commons/list/list.container";
+
 import Searchbar02 from "../../commons/search02/searchBar.contanier";
 import {
-  ItemLog,
   Wrapper,
   Title,
   Body,
   Head,
+  All,
   Wrapper_Body,
   GoodsImg,
   GoodsInfo,
   GoodsName,
-  LogoTitle,
-  LogoInfo,
-  LogoImg,
-  LogoName,
-  LogoRemarks,
-  LogoPrice,
-  LogoTag,
   InfoBox,
+  ItemList,
+  MainImage,
 } from "./marketList.style";
 
 interface IProps {
@@ -29,11 +25,11 @@ export default function MarketListUI(props) {
     <>
       <>
         <Wrapper>
-          <Title>marketList</Title>
-          <Searchbar setKeyword={props.setKeyword} />
+          <Title onClick={props.onClickMain}>marketList</Title>
+
           <Searchbar02 setKeyword={props.setKeyword} />
           <Head>카테고리</Head>
-
+          <All onClick={props.onClickAll}>장바구니</All>
           <Body>
             {props.list
               ?.filter((data) => data.name.includes(props.keyword))
@@ -45,33 +41,21 @@ export default function MarketListUI(props) {
                   <InfoBox>
                     <GoodsImg></GoodsImg>
                     <GoodsInfo>
-                      <GoodsName>{data.name}</GoodsName>
+                      <GoodsName isActive={data.id === props.activedPage}>
+                        {data.name}
+                      </GoodsName>
                     </GoodsInfo>
                   </InfoBox>
                 </Wrapper_Body>
               ))}
           </Body>
+          <ItemList>
+            {props.isEdit && (
+              <List goods={props.goods} activedPage={props.activedPage} />
+            )}
+            <MainImage src={"/소미마켓.png"} />
+          </ItemList>
         </Wrapper>
-        {/* <ItemLog>
-          <LogoTitle>오늘 본 상품</LogoTitle>
-          {props.basket
-            .slice(0)
-            .reverse()
-            .map((data: any, _: any) => (
-              <LogoInfo key={data._id} onClick={props.onClickToday(data)}>
-                <LogoImg
-                  src={`https://storage.googleapis.com/${data.images[0]}`}
-                />
-                <LogoName>{data.seller.name}</LogoName>
-                <LogoRemarks>{data.remarks.substr(0, 11) + "..."}</LogoRemarks>
-                <LogoPrice>
-                  {data.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-                  원
-                </LogoPrice>
-                <LogoTag>{data.tags}</LogoTag>
-              </LogoInfo>
-            ))}
-        </ItemLog> */}
       </>
     </>
   );
