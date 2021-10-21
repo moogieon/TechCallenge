@@ -21,12 +21,9 @@ export default function BasketUI(props) {
         {props.basket.length ? (
           <TopBox>
             {props.basket?.map((data) => (
-              <BestProductBox
-                key={data.prefix}
-                onClick={props.onClickMove(data.prefix)}
-              >
+              <BestProductBox key={data.prefix}>
                 <TopProductImg src={data.mainImage} />
-                <TopProductInfo>
+                <TopProductInfo onClick={props.onClickMove(data.prefix)}>
                   <TopName>{data.name}</TopName>
                   <TopInfoEtc>
                     <TopInfoLeft>
@@ -39,13 +36,13 @@ export default function BasketUI(props) {
                         원
                       </TopInfoPrice>
                     </TopInfoLeft>
-                    <TopInfoRight>
-                      <DeletItem onClick={props.onClickBasket(data)}>
-                        삭제
-                      </DeletItem>
-                    </TopInfoRight>
                   </TopInfoEtc>
                 </TopProductInfo>
+                <TopInfoRight>
+                  <DeletItem onClick={props.onClickBasket(data)}>
+                    삭제
+                  </DeletItem>
+                </TopInfoRight>
               </BestProductBox>
             ))}
           </TopBox>

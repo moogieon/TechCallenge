@@ -27,8 +27,10 @@ export default function MarketDeatil() {
     basket.forEach((data: any) => {
       if (data.prefix === Baskets.prefix) isExists = true;
     });
-    if (isExists) return alert("이미 담았습니다.");
-    basket.push(Baskets);
+    if (isExists) return alert("!! 이미 담았습니다 !!.");
+    if (basket.push(Baskets)) {
+      alert("장바구니에 담았습니다.");
+    }
     localStorage.setItem("basket", JSON.stringify(basket));
   };
   return (

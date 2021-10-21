@@ -40,12 +40,11 @@ export const BestProductBox = styled.div`
   border: 1px solid black;
   display: flex;
   flex-direction: row;
- 
   background-color: white;
   padding: 10px;
   margin-bottom: 20px;
+  
 
-  cursor: pointer;
 `;  
 export const TopProductImg = styled.img`
   width: 70px;
@@ -57,6 +56,7 @@ export const TopProductImg = styled.img`
 export const TopProductInfo = styled.div`
   /* width: 242px; */
   height: 89px;
+  cursor: pointer;
   /* background-color: #69696933; */
   display: flex;
   flex-direction: column;
