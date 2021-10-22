@@ -36,13 +36,13 @@ export default function BasketUI(props) {
                         원
                       </TopInfoPrice>
                     </TopInfoLeft>
+                    <TopInfoRight>
+                      <DeletItem onClick={props.onClickBasket(data)}>
+                        삭제
+                      </DeletItem>
+                    </TopInfoRight>
                   </TopInfoEtc>
                 </TopProductInfo>
-                <TopInfoRight>
-                  <DeletItem onClick={props.onClickBasket(data)}>
-                    삭제
-                  </DeletItem>
-                </TopInfoRight>
               </BestProductBox>
             ))}
           </TopBox>

@@ -54,7 +54,7 @@ export const TopProductImg = styled.img`
   background-size: 100%;
 `;
 export const TopProductInfo = styled.div`
-  /* width: 242px; */
+  width: 1000px;
   height: 89px;
   cursor: pointer;
   /* background-color: #69696933; */
@@ -93,18 +93,15 @@ export const TopInfoPrice = styled.div`
 `;
 
 export const TopInfoRight = styled.div`
-  width: 20px;
-  height: 50px;
-  width: 100%auto;
-  margin-left: 30px;
-  position: absolute;
-  left: 1400px;
-  /* padding-right: 30px; */
-`;
-export const DeletItem = styled.button`
   width: 70px;
   height: 50px;
-  margin-left: 30px;
+  width: 100%auto;
+
+`;
+export const DeletItem = styled.button`
+  width: 100%;
+  height: 100%;
+
   :hover{
     cursor: pointer;
     color: green;

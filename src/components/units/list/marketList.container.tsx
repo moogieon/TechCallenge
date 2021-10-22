@@ -31,7 +31,6 @@ export default function MarketList() {
     setIsEdit(true);
     setGoods(itemList.data);
     setActivedPage(categoryId);
-    history.pushState({ data: categoryId }, "", `?page=${categoryId}`);
   };
 
   // console.log(window.history);

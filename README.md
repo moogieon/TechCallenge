@@ -21,7 +21,7 @@
 ## :hammer: Installation
 
 ```javascript
-yarn add
+yarn i
 ```
 
 ## :bell: Usage
@@ -110,6 +110,6 @@ your browser open `http://localhost:3000/`
   - `aixos`와 `rest API` 를 이번에 거의 처음으로 사용 해 봐서 고민도 많이 하고<br/> 검색도 많이 해봤지만, 어느새 데이터를 불러오는데 즐기고 있는게 눈에 보였다.
 - 과제를 진행하면서 가장 아쉬웠던/어려웠던 부분<br/>
   - 위와 마찬가지로 `aixos`와 `rest API` 처음 사용 해봐서 난감했다.
-    = 아직 더 추가 하고싶은 기능 <br/> (오늘 본 상품, 장바구니에서 상품 추가하기, 페이지네이션 등 ) 하고 싶은게 많았지만 백신 2차 주사를 맞아서 다 하지 못했다.
+    = 아직 더 추가 하고싶은 기능 <br/> (오늘 본 상품, history API를 이용한 가짜 주소 만들기, 페이지네이션 등 ) 하고 싶은게 많았다.
 
 ## by 이창묵([LeeChangMook](https://github.com/moogieon))

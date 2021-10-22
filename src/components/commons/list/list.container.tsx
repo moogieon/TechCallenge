@@ -1,7 +1,5 @@
-// import { itemList } from "../goodsList/goodsList";
-import axios from "axios";
 import { useRouter } from "next/dist/client/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ListUI from "./list.presenter";
 
 export default function List(props) {

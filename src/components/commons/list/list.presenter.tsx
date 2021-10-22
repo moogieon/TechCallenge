@@ -34,12 +34,6 @@ export default function ListUI(props: any) {
                     onClick={props.onClickMove(data.prefix)}
                   >
                     {data.name ? data.name : "준비중입니다."}
-                    {/* {data.title
-               .replaceAll(props.keyword, `@#$%${props.keyword}@#$%`)
-               .split("@#$%")
-               .map((data: any) => (
-                 <Word>{data}</Word>
-               ))} */}
                   </Column_Title>
                   <Column_Category>{data.shop.name}</Column_Category>
                 </Wrapper_Body>
