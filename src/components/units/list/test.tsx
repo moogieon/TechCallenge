@@ -1,4 +1,4 @@
 import { Wrap } from "./marketList.style";
 export default function Test() {
-  return <Wrap>ss</Wrap>;
+  return <Wrap>페이지네이션</Wrap>;
 }
