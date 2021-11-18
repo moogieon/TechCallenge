@@ -32,6 +32,7 @@ export default function MarketDeatil() {
       alert("장바구니에 담았습니다.");
     }
     localStorage.setItem("basket", JSON.stringify(basket));
+    console.log(Baskets);
   };
   return (
     <MarketDeatilUI
