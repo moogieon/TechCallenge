@@ -20,7 +20,7 @@ interface IProps {
   name: string;
   id: number;
 }
-export default function MarketListUI(props) {
+export default function MarketListUI(props: any) {
   return (
     <>
       <>
